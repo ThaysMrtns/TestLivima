@@ -1,13 +1,8 @@
 class FuncionariosController < ApplicationController
-    before_action :authenticate_user!, except: [:index, :show, :new, :destroy, :create]
+    before_action :authenticate_user!, except: [:index, :new, :destroy, :create]
 
     def index
-        @funcionarios = Funcionario.all.limit 5
-    end
-
-    def show
-        id = params[:id];
-        @funcionario = Funcionario.find(id)
+        @funcionarios = Funcionario.all
     end
 
     def new

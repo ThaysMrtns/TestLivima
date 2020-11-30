@@ -1,0 +1,41 @@
+.cabecalho-new-titulo{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  justify-content: center;
+}
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-titulo{
+  padding-left: 10%;
+}
+
+.btn-form{
+  display: block;
+  background-color: #17dba4;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0px 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.form-input{
+  display: block;
+  width: 450px;
+  background-color: white;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin: 10px 0 0 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+

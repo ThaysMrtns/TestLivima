@@ -1,0 +1,29 @@
+html
+  head
+      header class="cabecalho"
+        a
+          h2 class="titulo" My Team
+
+  body
+  <!-- Conteudo da página -->
+    div class="container form form-container"
+      = form_for Funcionario.new do |form| 
+        br
+        div class="row" 
+          div class="form-group col-sm-8"
+            label class="text-form" Nome 
+            = form.text_field :nome, class:"form-control form-input"
+        div class="row"
+          div class="form-group col-sm-8"
+            label class="text-form" Cargo
+            = form.text_field :cargo, class:"form-control form-input"
+        div class="row"
+          div class="form-group col-sm-8"
+            label class="text-form" Salário
+            = form.text_field :salario, class:"form-control form-input"
+        div class="row"
+          div class="form-group col-sm-8"
+            label class="text-form" Email
+            = form.email_field :email, class:"form-control form-input"
+
+        = form.submit "Criar", class:"button-form btn-form btn efeito" 

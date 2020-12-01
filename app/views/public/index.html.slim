@@ -1,22 +1,19 @@
-html 
-    head
-        title home
-    body
-        header class="cabecalho"
-            //a class="navbar-brand" href="#"
-                h2 class="titulo" My Team
-            
-            div class="btns"
-                a class="navbar-brand" href="/public/about" 
-                    h3 class="efeitoText" Sobre 
-                button type="submit" class="btn-cabecalho btn efeito" Cadastre-se
-                = button_to "Login", new_user_session_path, class:'btn-cabecalho btn efeito'
+= javascript_pack_tag 'application' 
+= stylesheet_link_tag 'header'
 
-        section class="container conteudo"
-            div class="div-texto"
-                h1 My Team 
-                h4 Gerencie o seu time. Prático. Gratuito
-            br
-            button type="submit" class="btn-submit btn efeito" Crie seu time
+= nav_bar fixed: :top
+    div class="items"
+        a class="navbar-brand" href="/public/about" 
+            h3 class="efeitoText" Sobre 
+        button type="submit" class="btn efeito" Cadastre-se
+        = button_to "Login", new_user_session_path, class:'btn efeito'
 
-            
+section class="container conteudo"
+    div class="div-texto"
+        h1 My Team 
+        h4 Gerencie o seu time. Prático. Gratuito
+        = react_component("HelloWorld", { greeting: "Hello from react-rails." }) 
+    br
+    button type="submit" class="btn-submit btn efeito" Crie seu time
+
+    

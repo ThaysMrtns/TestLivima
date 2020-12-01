@@ -13,8 +13,8 @@ class Header extends React.Component {
             subTitle="Gerencie seu time"
             extra={[
               <Button key="3">Sobre</Button>,
-              <Button key="2">Cadastrar</Button>,
-              <Button href="/" key="1" type="primary">
+              <Button href="/users/sign_up" key="2">Cadastrar</Button>,
+              <Button href="/users/sign_in" key="1" type="primary">
                 Entrar
               </Button>,
             ]}

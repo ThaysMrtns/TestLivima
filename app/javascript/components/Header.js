@@ -17,6 +17,7 @@ class Header extends React.Component {
               <Button href="/users/sign_in" key="1" type="primary">
                 Entrar
               </Button>,
+              //<Button href="" formMethod="delete">Sair</Button>
             ]}
           >
           </PageHeader>

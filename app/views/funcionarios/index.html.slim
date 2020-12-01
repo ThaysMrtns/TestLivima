@@ -1,44 +1,18 @@
+= javascript_pack_tag 'application' 
+= stylesheet_link_tag 'content'
 
+//Header
+= react_component("Header") 
 
-header class="cabecalho"
-    a
-        h2 class="titulo" My Team
-    div class="btns"
-        button type="submit" class="btn-cabecalho btn efeito" Cadastre-se
-        = button_to "Login", new_user_session_path, class:'btn-cabecalho btn efeito'
 
 section class="container conteudo"
-    h1 Equipe de XXX da Empresa XXX  
-    br
-    div class="container-md"
-    ul class="list-group list-group-horizontal"
-        li class="col-sm-4 list-group-item" Nome
-        li class="col-sm-4 list-group-item" Cargo
-        li class="col-sm-4 list-group-item" Opções 
     ul class="list-group list-group-horizontal" 
         - @funcionarios.each do |f|
-            li class="col-sm-4 list-group-item" = f.nome
-            li class="col-sm-4 list-group-item" = f.cargo
-            button class="col-sm-2 list-group-item" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="evento(#{f.id})" Ver mais
-            div class="col-sm-2 list-group-item" = link_to 'Deletar', funcionario_path(f.id), method: "delete", data: {confirm:"Você tem certeza que deseja remover #{f.nome}?"}
-section
-    div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
-        div class="modal-dialog" role="document"
-            div class="modal-content"
-                div class="modal-header"
-                    h5 class="modal-title" id="exampleModalLabel" 
-                    button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        span aria-hidden="true" &times
-                div class="modal-body" 
-                    p#cargo cargo
-                    p#salario salário
-                    p#email email
-                div class="modal-footer"
-                    button type="button" class="btn btn-secondary" data-dismiss="modal" Fechar
-                    
+            //div class="col-sm-2 list-group-item" = link_to 'Deletar', funcionario_path(f.id), method: "delete", data: {confirm:"Você tem certeza que deseja remover #{f.nome}?"}
+    = react_component("TableFuncionarios", { name: @nomes}) 
+    = link_to  "Sair", destroy_user_session_path, method: :delete               
                 
-                                
-
+    
 
                             
                     

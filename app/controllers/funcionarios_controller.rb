@@ -1,8 +1,12 @@
 class FuncionariosController < ApplicationController
-    before_action :authenticate_user!, except: [:index, :new, :destroy, :create]
+    before_action :authenticate_user!#, except: [:index, :new, :destroy, :create]
 
     def index
+        #Renderizar o componente aqui e passar por meio de uma props a lista de funcionários
+        #A lista de funcionários está no formato de um array
         @funcionarios = Funcionario.all
+        @nomes = Funcionario.pluck(:nome);
+        #render component: 'TableFuncionarios', props: { name: @nomes }
     end
 
     def new

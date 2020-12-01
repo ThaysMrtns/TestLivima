@@ -1,11 +1,12 @@
 = javascript_pack_tag 'application' 
-= stylesheet_link_tag 'header'
+= stylesheet_link_tag 'content'
 
-= react_component("HelloWorld", { greeting: "Hello from react-rails." }) 
-    = button_to "Login", new_user_session_path, class:'btn efeito'
+//Header
+= react_component("Header") 
 
-section class="container conteudo"
-    
-    button type="submit" class="btn-submit btn efeito" Crie seu time
+section class="margin"
+    //Conteudo
+    h1 Gerencie seus times de forma eficiente
+    = react_component("PublicButton")
 
     

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import {PageHeader, Button, Descriptions} from 'antd';
 import 'antd/dist/antd.css';
 
-class HelloWorld extends React.Component {
+class Header extends React.Component {
   render () {
     return (
       <React.Fragment>
@@ -14,7 +14,7 @@ class HelloWorld extends React.Component {
             extra={[
               <Button key="3">Sobre</Button>,
               <Button key="2">Cadastrar</Button>,
-              <Button key="1" type="primary">
+              <Button href="/users/sign_in" key="1" type="primary">
                 Entrar
               </Button>,
             ]}
@@ -24,8 +24,4 @@ class HelloWorld extends React.Component {
     );
   }
 }
-
-HelloWorld.propTypes = {
-  greeting: PropTypes.string
-};
-export default HelloWorld
+export default Header

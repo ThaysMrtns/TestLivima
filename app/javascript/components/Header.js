@@ -14,7 +14,7 @@ class Header extends React.Component {
             extra={[
               <Button key="3">Sobre</Button>,
               <Button key="2">Cadastrar</Button>,
-              <Button href="/users/sign_in" key="1" type="primary">
+              <Button href="/" key="1" type="primary">
                 Entrar
               </Button>,
             ]}

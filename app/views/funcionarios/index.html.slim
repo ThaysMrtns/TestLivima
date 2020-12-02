@@ -6,10 +6,7 @@
 
 
 section class="container conteudo"
-    ul class="list-group list-group-horizontal" 
-        - @funcionarios.each do |f|
-            //div class="col-sm-2 list-group-item" = link_to 'Deletar', funcionario_path(f.id), method: "delete", data: {confirm:"Você tem certeza que deseja remover #{f.nome}?"}
-    = react_component("TableFuncionarios", { name: @nomes}) 
+    = react_component("TableFuncionarios",  name: @nomes, cargo: @cargos, salario: @salarios, email: @emails) 
     = link_to  "Sair", destroy_user_session_path, method: :delete               
                 
     

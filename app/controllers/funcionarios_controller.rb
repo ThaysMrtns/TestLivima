@@ -6,7 +6,9 @@ class FuncionariosController < ApplicationController
         #A lista de funcionários está no formato de um array
         @funcionarios = Funcionario.all
         @nomes = Funcionario.pluck(:nome);
-        #render component: 'TableFuncionarios', props: { name: @nomes }
+        @cargos = Funcionario.pluck(:cargo);
+        @salarios = Funcionario.pluck(:salario);
+        @emails = Funcionario.pluck(:email);
     end
 
     def new

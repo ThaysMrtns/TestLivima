@@ -15,4 +15,5 @@ Rails.application.config.assets.precompile += %w(
   header.scss
   funcionarios.scss
   content.scss
+  form.scss
 )

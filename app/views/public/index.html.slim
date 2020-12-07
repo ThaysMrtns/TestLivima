@@ -8,6 +8,16 @@ section class="margin"
     //Conteudo
     h1 Gerencie seus times de forma eficiente
     = react_component("PublicButton")
-    = link_to  "Sair", destroy_user_session_path, method: :delete
-
+    button "Sair"
+    
+javascript:
+    $("button").click(() => {
+        $.ajax({
+            url: '/users/sign_out',
+            type: 'DELETE',
+            success: function(result) {
+                console.log("Deslogado com sucesso!");
+            }
+        })
+    })
     

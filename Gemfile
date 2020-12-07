@@ -56,7 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem "twitter-bootstrap-rails"
 gem 'slim-rails'
+gem 'active_device', '~> 1.2'
 
 # React
 gem 'webpacker'
 gem 'react-rails'
+

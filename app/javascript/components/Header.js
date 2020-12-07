@@ -4,7 +4,7 @@ import {PageHeader, Button, Descriptions} from 'antd';
 import 'antd/dist/antd.css';
 
 class Header extends React.Component {
-  sair = ()=> {
+  sair = () => {
     console.log("sair");
     $.ajax({
         url: '/users/sign_out',
@@ -22,7 +22,6 @@ class Header extends React.Component {
             title="My Team"
             subTitle="Gerencie seu time"
             extra={[
-              <Button key="3">Sobre</Button>,
               <Button href="/users/sign_up" key="2">Cadastrar</Button>,
               <Button href="/users/sign_in" key="1" type="primary">
                 Entrar

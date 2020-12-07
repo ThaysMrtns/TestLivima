@@ -4,12 +4,10 @@
 //Header
 = react_component("Header") 
 
-
 section class="container conteudo"
-    = react_component("TableFuncionarios",  name: @nomes, cargo: @cargos, salario: @salarios, email: @emails) 
-    = link_to  "Sair", destroy_user_session_path, method: :delete               
-                
-    
+    h2 Adicionar pessoas ao time XXXX
+    = react_component("TableFuncionarios",  name: @nomes, cargo: @cargos, salario: @salarios, email: @emails)              
+    = react_component("AddPersonTeamForm")
 
                             
                     

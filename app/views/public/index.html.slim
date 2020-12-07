@@ -7,6 +7,12 @@
 section class="margin"
     //Conteudo
     h1 Gerencie seus times de forma eficiente
-    = react_component("PublicButton")
+    button onClick="criarTime()" Criar time
+
+javascript:
+    function criarTime(){
+        window.location.href = "/funcionarios";
+    }
+    
     
     

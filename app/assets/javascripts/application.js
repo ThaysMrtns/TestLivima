@@ -15,10 +15,3 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
-
-function evento(id){
-    
-    funcionarioId = id;
-    console.log(id);
-    return id;
-}

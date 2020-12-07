@@ -4,6 +4,16 @@ import {PageHeader, Button, Descriptions} from 'antd';
 import 'antd/dist/antd.css';
 
 class Header extends React.Component {
+  sair = ()=> {
+    console.log("sair");
+    $.ajax({
+        url: '/users/sign_out',
+        type: 'DELETE',
+        success: function(result) {
+          console.log("Deslogado com sucesso!");
+    }})
+  }
+
   render () {
     return (
       <React.Fragment>
@@ -16,7 +26,8 @@ class Header extends React.Component {
               <Button href="/users/sign_up" key="2">Cadastrar</Button>,
               <Button href="/users/sign_in" key="1" type="primary">
                 Entrar
-              </Button>
+              </Button>,
+              <Button onClick={this.sair}>Sair</Button>
             ]}
           >
           </PageHeader>

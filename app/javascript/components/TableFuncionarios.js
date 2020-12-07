@@ -19,6 +19,15 @@ const columns = [
     title: 'Salario',
     dataIndex: 'salario',
   },
+  {
+    title: 'Action',
+    key: 'action',
+    render: (text, record) => (
+      <Space size="middle">
+        <a>Deletar</a>
+      </Space>
+    ),
+  }
 ];
 
 class TableFuncionarios extends React.Component {

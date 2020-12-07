@@ -7,6 +7,22 @@ export default function AddPersonTeamForm(){
   const [visible, setVisible] = useState(false);
 
   //Form
+  const layout = {
+    labelCol: { span: 8 },
+    wrapperCol: { span: 16 },
+  };
+  const tailLayout = {
+    wrapperCol: { offset: 8, span: 16 },
+  };
+  
+  
+  const onFinish = values => {
+    console.log('Success:', values);
+  };
+  
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo);
+  };
   
   
     return (
@@ -23,9 +39,20 @@ export default function AddPersonTeamForm(){
             onCancel={() => setVisible(false)}
             width={1000}
           >
-            <p>some contents...</p>
-            <p>some contents...</p>
-            <p>some contents...</p>
+            <Form
+              {...layout}
+              name="basic"
+              initialValues={{ remember: true }}
+              onFinish={onFinish()}
+              onFinishFailed={onFinishFailed()}
+            ></Form>
+            <Form.Item
+              label="Username"
+              name="username"
+              rules={[{ required: true, message: 'Please input your username!' }]}
+            >
+              <Input />
+            </Form.Item>
           </Modal>
         </>
       </React.Fragment>

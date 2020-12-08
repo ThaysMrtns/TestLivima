@@ -16,14 +16,43 @@ export default function AddPersonTeamForm(){
   };
   
   
-  const onFinish = values => {
-    console.log('Success:', values);
+  const onFinish = (values) => {
+   // const response = values; //GUardar a resposta 
+    console.log(values);
+    
+    //fazer uma requisição da resposta para o banco de dados
+    $.ajax({
+      url: "/funcionarios/",
+      type: 'POST',
+      data: JSON.stringify(values),
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+      success: (data) => {
+        alert(`Criado com sucesso! ${data}`);
+      }}).error((err) => {
+        console.log(`falha ao salvar, ${err}`);
+    });
+    //saveData(response);
   };
   
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
   
+ /* const saveData = (values) => {
+    //console.log(`values SaveDAta ${values}`);
+    $.ajax({
+      type: 'POST',
+      url: `/funcionarios/${values}`,
+      //data: values,
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+      success: (data) => {
+        alert(`Criado com sucesso! ${data}`);
+      }}).error((err) => {
+        console.log(`falha ao salvar, ${err}`);
+    });
+  }*/
   
     return (
       <React.Fragment>
@@ -43,16 +72,43 @@ export default function AddPersonTeamForm(){
               {...layout}
               name="basic"
               initialValues={{ remember: true }}
-              onFinish={onFinish()}
-              onFinishFailed={onFinishFailed()}
-            ></Form>
-            <Form.Item
-              label="Username"
-              name="username"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
             >
-              <Input />
-            </Form.Item>
+              <Form.Item
+                label="Nome"
+                name="nome"
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="Cargo"
+                name="cargo"
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="Salário"
+                name="salario"
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="Email"
+                name="email"
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item {...tailLayout}>
+                <Button type="primary" htmlType="submit">
+                  Submit
+                </Button>
+              </Form.Item>
+            </Form>
           </Modal>
         </>
       </React.Fragment>

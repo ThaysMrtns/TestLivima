@@ -15,7 +15,9 @@ class FuncionariosController < ApplicationController
     end
 
     def create
+        binding.pry
         funcionario = params.require(:funcionario).permit(:nome, :cargo, :salario, :email)
+        
         Funcionario.create funcionario
         redirect_to '/'
     end

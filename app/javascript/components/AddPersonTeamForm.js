@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useState } from 'react';
-import { Modal, Button, Form, Input, Checkbox} from 'antd';
+import { Modal, Button, Form, Input} from 'antd';
 
 export default function AddPersonTeamForm(){
   //Modal
@@ -17,8 +17,6 @@ export default function AddPersonTeamForm(){
   
   
   const onFinish = (values) => {
-   // const response = values; //GUardar a resposta 
-    console.log(values);
     
     //fazer uma requisição da resposta para o banco de dados
     $.ajax({
@@ -28,7 +26,7 @@ export default function AddPersonTeamForm(){
       dataType: "json",
       contentType: "application/json; charset=utf-8",
       success: (data) => {
-        alert(`Criado com sucesso! ${data}`);
+        console.log(`Criado com sucesso! ${data}`);
       }}).error((err) => {
         console.log(`falha ao salvar, ${err}`);
     });
@@ -38,21 +36,6 @@ export default function AddPersonTeamForm(){
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
-  
- /* const saveData = (values) => {
-    //console.log(`values SaveDAta ${values}`);
-    $.ajax({
-      type: 'POST',
-      url: `/funcionarios/${values}`,
-      //data: values,
-      dataType: "json",
-      contentType: "application/json; charset=utf-8",
-      success: (data) => {
-        alert(`Criado com sucesso! ${data}`);
-      }}).error((err) => {
-        console.log(`falha ao salvar, ${err}`);
-    });
-  }*/
   
     return (
       <React.Fragment>

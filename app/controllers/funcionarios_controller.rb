@@ -9,6 +9,7 @@ class FuncionariosController < ApplicationController
         @cargos = Funcionario.pluck(:cargo);
         @salarios = Funcionario.pluck(:salario);
         @emails = Funcionario.pluck(:email);
+        @ids = Funcionario.pluck(:id);
     end
 
     def new

@@ -16,11 +16,15 @@ class FuncionariosController < ApplicationController
     end
 
     def create
-        binding.pry
-        funcionario = params.require(:funcionario).permit(:nome, :cargo, :salario, :email)
+        @funcionario = params.require(:funcionario).permit(:nome, :cargo, :salario, :email)
         
-        Funcionario.create funcionario
-        redirect_to '/'
+        if Funcionario.create @funcionario
+            UserMailer.with(funcionario: @funcionario).welcome_email
+            redirect_to '/'
+        else
+            redirect_to '/'
+            puts "Erro ao criar funcionário!"
+        end
     end
 
     def destroy

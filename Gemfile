@@ -65,3 +65,5 @@ gem 'react-rails'
 
 gem 'pry-rails'
 
+gem 'mail', '~> 2.7', '>= 2.7.1'
+

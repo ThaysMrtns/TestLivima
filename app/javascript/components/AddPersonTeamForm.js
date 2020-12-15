@@ -27,6 +27,7 @@ export default function AddPersonTeamForm(){
       contentType: "application/json; charset=utf-8",
       success: (data) => {
         console.log(`Criado com sucesso! ${data}`);
+        document.location.reload(true);
       }}).error((err) => {
         console.log(`falha ao salvar, ${err}`);
     });
@@ -44,6 +45,7 @@ export default function AddPersonTeamForm(){
             Adicionar pessoas ao time
           </Button>
           <Modal
+            footer={null}
             title="Adicionar pessoas"
             centered
             visible={visible}

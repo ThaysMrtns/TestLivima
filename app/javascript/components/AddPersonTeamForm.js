@@ -30,8 +30,8 @@ export default function AddPersonTeamForm(){
         document.location.reload(true);
       }}).error((err) => {
         console.log(`falha ao salvar, ${err}`);
+        document.location.reload(true);
     });
-    //saveData(response);
   };
   
   const onFinishFailed = errorInfo => {

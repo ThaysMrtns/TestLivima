@@ -30,7 +30,13 @@ class TableFuncionarios extends React.Component {
     return data;
   }
 
+  sucessoAlert(){
+    //Habilita o alert
+    setTimeout(()=>{ alert("Hello"); }, 3000);
+  }
+
   deletar(id){
+    const alert = document.getElementsByClassName("alertSucesso");
     $.ajax({
       url: `/funcionarios/${id}`,
       type: 'DELETE',
@@ -40,18 +46,24 @@ class TableFuncionarios extends React.Component {
         console.log(`Deletado com sucesso! ${data}`);
         document.location.reload(true);
         //Exibir um alert de sucesso
+        console.log(alert);
       }}).error((err) => {
         console.log(`falha ao deletar, ${err}`);
         //Exibir um alert de erro
     });
-    // Recarregar página
-
+    // Verifica se a tela foi carregada
+    $(window).on("load", function(){
+      // página totalmente carregada (DOM, imagens etc.)
+      //this.sucessoAlert();
+      console.log("Terminou de carregar");
+    });
   }
 
   render () {   
    return (
       <React.Fragment> 
-        <Alert action={console.log("estou vivo")}
+        <Alert 
+          className="alertSucesso"
           message="Sucesso ao deletar!"
           type="success"
           showIcon
